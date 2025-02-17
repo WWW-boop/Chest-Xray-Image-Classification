@@ -1,1 +1,1 @@
-# Chest-X-Ray-Image-Classification
+# Pneumonia Classification from Chest X-ray Images
