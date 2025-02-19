@@ -18,5 +18,6 @@ model.add(Dense(1, activation='sigmoid'))
 This CNN architecture consists of three convolutional layers with max-pooling, followed by a flattening layer and two dense layers. The final layer uses the sigmoid activation function for binary classification.
 ## Dataset 🖼️
 Chest X-Ray Images (Pneumonia)
-//
+
+
 [Dataset Link](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia/)
