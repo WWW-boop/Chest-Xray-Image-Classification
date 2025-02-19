@@ -1,3 +1,6 @@
 numpy
 opencv-python
 matplotlib
+tensorflow
+keras-models
+setuptools
