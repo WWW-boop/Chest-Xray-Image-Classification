@@ -45,3 +45,13 @@ Test the model by using the provided ```predict``` function:
 predict('data/image/NORMAL/IM-0001-0001.jpeg')  # Output: Normal
 predict('data/image/PNEUMONIA/person1_bacteria_1.jpeg')  # Output: Pneumonia
 ```
+
+## Save and Load Model ⬇️
+Save the trained model:
+```bash
+model.save('models/main_model.keras')
+```
+Load the saved model:
+```bash
+new_model = load_model('models/main_model.keras')
+```
