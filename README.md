@@ -21,3 +21,4 @@ Chest X-Ray Images (Pneumonia)
 
 
 [Dataset Link](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia/)
+The normal and pneumonia folders within the data/image/ directory contain a substantial number of chest X-ray images for both normal and pneumonia cases.
