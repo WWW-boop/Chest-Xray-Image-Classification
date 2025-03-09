@@ -51,7 +51,7 @@ def predict_xray(image_data):
         prediction = model.predict(processed_image)
         
         raw_score = float(prediction[0][0])  # ดึงค่าผลลัพธ์ออกมา
-        print(f"Raw Prediction Score: {raw_score}")  # Debugging
+        print(f"Prediction Score: {raw_score}")  # Debugging
 
         # แปลงค่าเป็น % ตามเกณฑ์ 0.5 เป็นจุดกึ่งกลาง
         if raw_score <= 0.5:
