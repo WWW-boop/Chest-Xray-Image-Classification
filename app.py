@@ -49,19 +49,31 @@ def predict_xray(image_data):
     try:
         processed_image = preprocess_image(image_data)
         prediction = model.predict(processed_image)
-        print(f"Prediction: {prediction}")  # Debug statement
-        print(f"Prediction shape: {prediction.shape}")  # Debug statement
         
-        # Assuming binary classification
-        class_index = int(prediction[0][0] > 0.5)
-        confidence = float(prediction[0][0]) * 100
-        
-        print(f"Class index: {class_index}")  # Debug statement
-        
-        
-        return {"result": CLASS_LABELS[class_index]}
+        raw_score = float(prediction[0][0])  # ดึงค่าผลลัพธ์ออกมา
+        print(f"Raw Prediction Score: {raw_score}")  # Debugging
+
+        # แปลงค่าเป็น % ตามเกณฑ์ 0.5 เป็นจุดกึ่งกลาง
+        if raw_score <= 0.5:
+            normal_confidence = (0.5 - raw_score) * 200  # ค่าปรับให้เป็น 0 - 100%
+            pneumonia_confidence = 100 - normal_confidence
+        else:
+            pneumonia_confidence = (raw_score - 0.5) * 200  # ค่าปรับให้เป็น 0 - 100%
+            normal_confidence = 100 - pneumonia_confidence
+
+        # ตัดสินผลลัพธ์ว่าเป็น Normal หรือ Pneumonia
+        class_index = int(raw_score > 0.5)
+
+        return {
+            "result": CLASS_LABELS[class_index],
+            "normal_confidence": round(normal_confidence, 2),
+            "pneumonia_confidence": round(pneumonia_confidence, 2)
+        }
     except Exception as e:
         return {"error": str(e)}
+
+
+
 
 
 
