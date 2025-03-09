@@ -59,9 +59,9 @@ history = model.fit(train, epochs=24, validation_data=val, callbacks=[tensorboar
 ## Model Evaluation 📊
 After training, the model's precision, recall, and accuracy can be evaluated using the test dataset.
 ```bash
-print('Precision: ', pre.result().numpy())
-print('Recall: ', rec.result().numpy())
-print('Accuracy: ', acc.result().numpy())
+print('Precision: ', pre.result().numpy()) //Precision:  0.9892761
+print('Recall: ', rec.result().numpy())    //Recall:  0.984
+print('Accuracy: ', acc.result().numpy())  //Accuracy:  0.98046875
 ```
 ## Testing the Model 🧪
 Test the model by using the provided ```predict``` function:
@@ -82,7 +82,7 @@ new_model = load_model('models/main_model.keras')
 
 ## Preview App 🌐
 <img src="https://raw.githubusercontent.com/WWW-boop/Chest-Xray-Image-Classification/main/data/image/Screenshot%202025-03-09%20153631.png" width="1000">
-
+<img src="https://raw.githubusercontent.com/WWW-boop/Chest-Xray-Image-Classification/main/data/image/Screenshot%202025-03-09%20162424.png" width="1000">
 
 
 
