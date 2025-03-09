@@ -57,9 +57,9 @@ def predict_xray(image_data):
         confidence = float(prediction[0][0]) * 100
         
         print(f"Class index: {class_index}")  # Debug statement
-        print(f"Confidence: {confidence}")  # Debug statement
         
-        return {"result": CLASS_LABELS[class_index], "confidence": round(confidence, 2)}
+        
+        return {"result": CLASS_LABELS[class_index]}
     except Exception as e:
         return {"error": str(e)}
 

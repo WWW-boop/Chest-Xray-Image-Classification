@@ -34,11 +34,11 @@
     <div id="tsparticles" class="absolute inset-0 -z-10"></div>
 
     <div class="bg-white dark:bg-gray-800 shadow-2xl rounded-lg w-full max-w-lg p-4 sm:p-8 transform hover:scale-105 transition-transform duration-300 mx-4">
-        <h1 class="text-2xl sm:text-3xl font-bold text-center text-gray-800 dark:text-gray-200 mb-4 sm:mb-6 animate-fadeIn">Chest X-ray Classification</h1>
+        <h1 class="text-2xl sm:text-3xl font-bold text-center text-gray-800 dark:text-gray-200 mb-4 sm:mb-6 animate-fadeIn">Chest X-ray Classification 🩻 </h1>
         <form id="uploadForm" class="space-y-4 sm:space-y-6">
             <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
             <div>
-                <label for="image" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Upload X-ray Image</label>
+                <label for="image" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Upload X-ray Image 🖼️</label>
                 <input type="file" id="image" name="image" accept="image/*"
                     class="mt-1 block w-full text-sm dark:text-gray-300 border border-gray-300 rounded-lg cursor-pointer focus:outline-none">
                 
@@ -105,7 +105,7 @@
 
                 const result = await response.json();
                 if (response.ok) {
-                    document.getElementById('classification').textContent = `Diagnosis: ${result.result}, Confidence: ${result.confidence}%`;
+                    document.getElementById('classification').textContent = `Diagnosis: ${result.result}`;
                     document.getElementById('result').classList.remove('hidden');
                 } else {
                     alert(result.error || 'Error processing image.');
