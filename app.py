@@ -27,9 +27,9 @@ limiter = Limiter(get_remote_address, app=app, default_limits=["100 per minute"]
 # Load Chest X-ray Classification Model
 try:
     model = load_model("Chest-X-Ray-Image-Classification\models\main_model.keras")
-    print("✅ Model loaded successfully!")
+    print("Model loaded successfully!")
 except Exception as e:
-    print(f"❌ Failed to load model: {e}")
+    print(f"Failed to load model: {e}")
 
 # Define class labels
 CLASS_LABELS = {0: "Normal", 1: "Pneumonia"}  # Adjust based on your model
