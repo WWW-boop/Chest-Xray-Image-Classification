@@ -80,3 +80,9 @@ Load the saved model:
 new_model = load_model('models/main_model.keras')
 ```
 
+## Preview App 🌐
+<img src="https://raw.githubusercontent.com/WWW-boop/Chest-Xray-Image-Classification/main/data/image/Screenshot%202025-03-09%20153631.png" width="1000">
+
+
+
+
