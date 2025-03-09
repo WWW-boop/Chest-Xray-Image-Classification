@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chest X-ray Classification</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+        <h1 class="text-2xl font-bold text-center mb-4">Chest X-ray Classification</h1>
+        <form id="uploadForm" class="space-y-4">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <div>
+                <label for="image" class="block text-sm font-medium text-gray-700">Upload X-ray Image</label>
+                <input type="file" id="image" name="image" accept="image/*"
+                    class="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer focus:outline-none">
+            </div>
+            <button type="submit"
+                class="w-full bg-blue-600 text-white font-medium py-2 px-4 rounded-lg hover:bg-blue-700">
+                Analyze X-ray
+            </button>
+        </form>
+        <div id="result" class="mt-4 hidden">
+            <h2 class="text-lg font-bold">Result:</h2>
+            <p id="classification" class="text-lg font-semibold text-gray-800"></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const fileInput = document.getElementById('image');
+            if (!fileInput.files.length) {
+                alert('Please upload an image.');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('image', fileInput.files[0]);
+
+            try {
+                const response = await fetch('/predict', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+                if (response.ok) {
+                    document.getElementById('classification').textContent = `Diagnosis: ${result.result}%`;
+                    document.getElementById('result').classList.remove('hidden');
+                } else {
+                    alert(result.error || 'Error processing image.');
+                }
+            } catch (error) {
+                alert('Failed to analyze the image.');
+            }
+        });
+    </script>
+</body>
+
+</html>
