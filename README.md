@@ -1,6 +1,30 @@
 # Pneumonia Classification from Chest X-ray Images 🩻🔍
 ## Contributors 👤
 Wikran Petsuwan 6610110277
+
+## Installation & Setup  💾
+1. Clone this repository
+```bash
+git clone https://github.com/WWW-boop/Chest-Xray-Image-Classification.git
+```
+
+2. Navigate to the project directory
+```bash
+cd Chest-X-Ray-Image-Classification
+```
+3. Set up environment variables
+```bash
+python -m venv venv
+```
+4. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+5. Start the application
+```bash
+python app.py
+```
 ## Dataset 🖼️
 Chest X-Ray Images (Pneumonia)
 
@@ -55,3 +79,4 @@ Load the saved model:
 ```bash
 new_model = load_model('models/main_model.keras')
 ```
+
