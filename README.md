@@ -85,4 +85,7 @@ new_model = load_model('models/main_model.keras')
 <img src="https://raw.githubusercontent.com/WWW-boop/Chest-Xray-Image-Classification/main/data/image/Screenshot%202025-03-09%20162424.png" width="1000">
 
 
-
+Pneumonia Detection using CNN(92.6% Accuracy)
+https://www.kaggle.com/code/madz2000/pneumonia-detection-using-cnn-92-6-accuracy
+Chest X-Ray | Xception | 94%
+https://www.kaggle.com/code/abdmental01/chest-x-ray-xception-94
